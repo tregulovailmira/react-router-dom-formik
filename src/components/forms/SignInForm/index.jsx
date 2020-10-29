@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './SignInForm.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import CustomInput from '../CustomInput';
+import Input from '../../fields/Input';
 import { validationSchema } from '../../../utils/validationSchems';
 
 const SignInForm = () => {
@@ -12,8 +12,8 @@ const SignInForm = () => {
   return (
     <Formik initialValues={initialValues} validationSchema={validationSchema}>
       <Form>
-        <CustomInput name="email" placeholder="Email Adress" />
-        <CustomInput name="password" type="password" placeholder="Password" />
+        <Input name="email" placeholder="Email Adress" />
+        <Input name="password" type="password" placeholder="Password" />
         <div>
           <input type="checkbox" />
           <span>Remember Me</span>

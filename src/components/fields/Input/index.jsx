@@ -1,15 +1,15 @@
 import React from 'react';
 import { Field } from 'formik';
-import styles from './CustomInput.module.css';
+import styles from './Input.module.css';
 import Classnames from 'classnames';
 
-const CustomInput = (props) => {
+const Input = (props) => {
   const { name, ...rest } = props;
-  console.log(rest);
   return (
     <Field name={name}>
       {({ field, meta }) => {
         const inputClasses = Classnames(
+          styles.input,
           {
             [styles.valid]: !meta.error && meta.touched,
           },
@@ -18,8 +18,8 @@ const CustomInput = (props) => {
           }
         );
         return (
-          <label>
-            <input {...field} {...rest} className={inputClasses}/>
+          <label className={styles.container}>
+            <input {...field} {...rest} className={inputClasses} />
             {meta.touched && meta.error && (
               <span className={styles.error}>{meta.error}</span>
             )}
@@ -30,4 +30,4 @@ const CustomInput = (props) => {
   );
 };
 
-export default CustomInput;
+export default Input;

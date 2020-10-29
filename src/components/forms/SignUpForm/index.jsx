@@ -1,8 +1,11 @@
 import React from 'react';
 import styles from './SignUpForm.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import CustomInput from '../CustomInput';
+import Input from '../../fields/Input';
 import { validationSchema } from '../../../utils/validationSchems';
+import Button from '../../fields/Button';
+import SocialButton from '../../fields/SocialButton';
+import Classnames from 'classnames';
 
 const SignUpForm = () => {
   const initialValues = {
@@ -13,15 +16,22 @@ const SignUpForm = () => {
     password: '',
     passwordConfirmation: '',
   };
+
+  const signUpButtonStyles = Classnames({
+    container: styles.signUpButton,
+  });
+
+  const facebookButtonStyles = Classnames(styles.facebookButton);
+  const googleButtonStyles = Classnames(styles.googleButton);
   return (
     <Formik initialValues={initialValues} validationSchema={validationSchema}>
-      <Form>
-        <CustomInput name="firstName" placeholder="First name" />
-        <CustomInput name="lastName" placeholder="Last name" />
-        <CustomInput name="displayName" placeholder="Display name" />
-        <CustomInput name="email" placeholder="Email Adress" />
-        <CustomInput name="password" type="password" placeholder="Password" />
-        <CustomInput
+      <Form className={styles.formContainer}>
+        <Input name="firstName" placeholder="First name" />
+        <Input name="lastName" placeholder="Last name" />
+        <Input name="displayName" placeholder="Display name" />
+        <Input name="email" placeholder="Email Adress" />
+        <Input name="password" type="password" placeholder="Password" />
+        <Input
           name="passwordConfirmation"
           type="password"
           placeholder="Password Confirmation"
@@ -54,7 +64,11 @@ const SignUpForm = () => {
           </span>
         </div>
         <div>
-          <input type="submit" value="Create account" />
+          <Button
+            type="submit"
+            text="Create acount"
+            stylesClasses={signUpButtonStyles}
+          />
           <span>
             By clicking this button, you agree to our{' '}
             <a href="https://www.squadhelp.com/Terms&Conditions">
@@ -62,12 +76,8 @@ const SignUpForm = () => {
             </a>
           </span>
         </div>
-        <button>
-          <span>Sign up with Facebook</span>
-        </button>
-        <button>
-          <span>Sign up with Google</span>
-        </button>
+        <SocialButton text='Sign up with Facebook' socialType='google' stylesClasses={facebookButtonStyles}/>
+        <SocialButton text='Sign up with Google' socialType='facebook' stylesClasses={googleButtonStyles}/>
       </Form>
     </Formik>
   );

@@ -1,0 +1,47 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  box-sizing: border-box;
+  color: #9ca8b7;
+  font-size: 16px;
+  height: auto;
+  padding: 21px 23px;
+  border: 2px solid white;
+  border-radius: 4px;
+  outline: none;
+}
+
+.valid {
+  border: 2px solid green;
+}
+
+.invalid {
+  border: 2px solid #b72522;
+}
+
+.error {
+  position: absolute;
+  z-index: 5;
+  border-radius: 4px;
+  background-color: #b72522;
+  color: #ffffff;
+  font-size: 13px;
+  padding: 5px 15px;
+  top: 76px;
+}
+
+.error::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 10px 12px 10px;
+  border-color: transparent transparent #b72422 transparent;
+  top: -12px;
+  left: 20px;
+}
