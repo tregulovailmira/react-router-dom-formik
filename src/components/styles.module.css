@@ -1,0 +1,23 @@
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    max-width: 550px;
+    margin: 0 auto;
+  }
+  
+  .formHeader {
+    font-size: 38px;
+    margin-bottom: 10px;
+  }
+
+  .formDescription {
+    font-size: 18px;
+  }
+  
+  .socialButton {
+    margin-bottom: 10px;
+  }
+  
