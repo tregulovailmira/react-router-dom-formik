@@ -4,10 +4,12 @@
   border: 1px solid #ffffff;
   color: #ffffff;
   font-size: 20px;
+  cursor: pointer;
 }
 
 .input {
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .textContainer {
