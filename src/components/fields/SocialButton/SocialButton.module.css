@@ -1,8 +1,9 @@
 .socialButton {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
-  padding: 6px 12px;
+  padding: 12px;
   font-size: 0.9rem;
   font-weight: 600;
   color: #ffffff;
@@ -18,8 +19,8 @@
   background-color: #2d4373;
 }
 
-.socialIcon{
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
+.socialIcon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
 }
