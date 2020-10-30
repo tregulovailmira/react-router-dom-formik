@@ -1,34 +1,60 @@
 import React from 'react';
 import styles from './SignInForm.module.css';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form } from 'formik';
 import Input from '../../fields/Input';
-import { validationSchema } from '../../../utils/validationSchems';
+import Button from '../../fields/Button';
+import Checkbox from '../../fields/Checkbox';
+import { validationSignInSchema } from '../../../utils/validationSchems';
 
 const SignInForm = () => {
   const initialValues = {
     email: '',
     password: '',
+    rememberMe: false,
   };
+
+  const inputStylesClasses = { container: styles.inputMargin };
+  const buttonStylesClasses = { container: styles.buttonMargin };
+
+  const submitHandler = (values, formikBag) => {
+    formikBag.resetForm();
+  };
+
   return (
-    <Formik initialValues={initialValues} validationSchema={validationSchema}>
-      <Form>
-        <Input name="email" placeholder="Email Adress" />
-        <Input name="password" type="password" placeholder="Password" />
-        <div>
-          <input type="checkbox" />
-          <span>Remember Me</span>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={validationSignInSchema}
+      onSubmit={submitHandler}
+    >
+      <Form className={styles.formContainer}>
+        <Input
+          name="email"
+          placeholder="Email Adress"
+          stylesClasses={inputStylesClasses}
+        />
+        <Input
+          name="password"
+          type="password"
+          placeholder="Password"
+          stylesClasses={inputStylesClasses}
+        />
+        <div className={styles.infoWrapper}>
+          <Checkbox name="rememberMe">Remember Me</Checkbox>
+          <div>
+            <a
+              href="https://www.squadhelp.com/forgot_password.php"
+              className={styles.forgorPassword}
+            >
+              Forgot Password
+            </a>
+          </div>
         </div>
-        <div>
-          <a href="https://www.squadhelp.com/forgot_password.php"></a>Forgot
-          Password
-        </div>
-        <button type="submit">LOGIN</button>
-        <button>
-          <span>Sign up with Facebook</span>
-        </button>
-        <button>
-          <span>Sign up with Google</span>
-        </button>
+
+        <Button
+          type="submit"
+          text="LOGIN"
+          stylesClasses={buttonStylesClasses}
+        />
       </Form>
     </Formik>
   );

@@ -1,0 +1,24 @@
+.formContainer {
+  width: 550px;
+}
+
+.infoWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin: 10px 0;
+}
+
+.forgorPassword {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.inputMargin {
+  margin-top: 10px;
+}
+
+.buttonMargin {
+  margin-bottom: 30px;
+}
