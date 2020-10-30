@@ -1,0 +1,27 @@
+.inputWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.inputWrapper input {
+  margin-top: 15px;
+}
+
+.radioButtonMargin {
+  margin-top: 25px;
+}
+
+.checkBoxMargin {
+  margin: 20px 0;
+}
+
+.termsOfService {
+  margin: 20px 0 25px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.termsOfService > a {
+  color: #ffffff;
+}
