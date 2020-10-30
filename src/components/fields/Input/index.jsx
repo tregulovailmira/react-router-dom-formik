@@ -3,12 +3,13 @@ import { Field } from 'formik';
 import styles from './Input.module.css';
 import Classnames from 'classnames';
 
-const Input = (props) => {
-  const { name, ...rest } = props;
+const Input = ({ name, stylesClasses = {}, ...rest }) => {
+  const { container } = stylesClasses;
   return (
     <Field name={name}>
       {({ field, meta }) => {
         const inputClasses = Classnames(
+          container,
           styles.input,
           {
             [styles.valid]: !meta.error && meta.touched,

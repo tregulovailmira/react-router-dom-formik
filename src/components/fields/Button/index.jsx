@@ -1,15 +1,15 @@
 import React from 'react';
 import Classnames from 'classnames';
-const Button = (props) => {
-    const { text, onClick = ()=>{}, type, imgSrc, stylesClasses: {container} } = props;
+import styles from './Button.module.css';
 
-    const btnClasses= Classnames(container);
-    return (
-        <button onClick={onClick} type={type} className={btnClasses} >
-            {imgSrc && <img src={imgSrc} alt='icon'/>}
-            {text}
-        </button>
-    );
-}
+const Button = ({ text, onClick = () => {}, type, stylesClasses = {} }) => {
+  const { container } = stylesClasses;
+  const buttonClasses = Classnames(container, styles.button);
+  return (
+    <button onClick={onClick} type={type} className={buttonClasses}>
+      {text}
+    </button>
+  );
+};
 
 export default Button;

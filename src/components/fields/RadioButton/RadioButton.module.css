@@ -1,0 +1,21 @@
+.radioButtonContainer {
+  display: flex;
+  padding: 10px 15px 15px;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.input {
+  margin-right: 10px;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.description {
+  font-size: 12px;
+  margin-top: 5px;
+}
