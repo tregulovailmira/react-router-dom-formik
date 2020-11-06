@@ -15,26 +15,24 @@ const RadioButton = (props) => {
   const radioButtonClasses = Classnames(styles.radioButtonContainer, container);
   return (
     <Field type="radio" name={name} value={value}>
-      {({ field }) => {
-        return (
-          <label className={radioButtonClasses}>
-            <input
-              {...field}
-              {...rest}
-              name={name}
-              value={value}
-              type="radio"
-              className={styles.input}
-            />
-            <div className={styles.textContainer}>
-              {children}
-              {description && (
-                <span className={styles.description}>{description}</span>
-              )}
-            </div>
-          </label>
-        );
-      }}
+      {({ field }) => (
+        <label className={radioButtonClasses}>
+          <input
+            {...field}
+            {...rest}
+            name={name}
+            value={value}
+            type="radio"
+            className={styles.input}
+          />
+          <div className={styles.textContainer}>
+            {children}
+            {description && (
+              <span className={styles.description}>{description}</span>
+            )}
+          </div>
+        </label>
+      )}
     </Field>
   );
 };

@@ -8,16 +8,10 @@ const Input = ({ name, stylesClasses = {}, ...rest }) => {
   return (
     <Field name={name}>
       {({ field, meta }) => {
-        const inputClasses = Classnames(
-          container,
-          styles.input,
-          {
-            [styles.valid]: !meta.error && meta.touched,
-          },
-          {
-            [styles.invalid]: meta.touched && meta.error,
-          }
-        );
+        const inputClasses = Classnames(container, styles.input, {
+          [styles.valid]: !meta.error && meta.touched,
+          [styles.invalid]: meta.touched && meta.error,
+        });
         return (
           <label className={styles.container}>
             <input {...field} {...rest} className={inputClasses} />

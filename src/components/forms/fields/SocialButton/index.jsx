@@ -12,15 +12,19 @@ const SocialButton = (props) => {
     onclick = () => {},
     stylesClasses: { container },
   } = props;
-  
+
   const socialButtonStyles = Classnames(
     styles.socialButton,
-    [styles[socialType]],
+    styles[socialType],
     container
   );
 
-  const googleIcon = <Icon path={mdiGoogle} size={1} className={styles.socialIcon}/>;
-  const facebookIcon = <Icon path={mdiFacebook} size={1} className={styles.socialIcon}/>;
+  const googleIcon = (
+    <Icon path={mdiGoogle} size={1} className={styles.socialIcon} />
+  );
+  const facebookIcon = (
+    <Icon path={mdiFacebook} size={1} className={styles.socialIcon} />
+  );
   const socialIcons = {
     google: googleIcon,
     facebook: facebookIcon,

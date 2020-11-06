@@ -6,6 +6,7 @@ import Button from '../fields/Button';
 import RadioButton from '../fields/RadioButton';
 import Checkbox from '../fields/Checkbox';
 import { validationSignUpSchema } from '../../../utils/validationSchems';
+import { Link } from 'react-router-dom';
 
 const SignUpForm = () => {
   const initialValues = {
@@ -16,7 +17,7 @@ const SignUpForm = () => {
     password: '',
     passwordConfirmation: '',
     allow: false,
-    joinAs: false,
+    joinAs: '',
   };
 
   const radioButtonClasses = { container: styles.radioButtonMargin };
@@ -74,9 +75,9 @@ const SignUpForm = () => {
 
         <div className={styles.termsOfService}>
           By clicking this button, you agree to our{' '}
-          <a href="https://www.squadhelp.com/Terms&Conditions">
+          <Link to="/Terms&Conditions" target='_blank'>
             Terms of Service.
-          </a>
+          </Link>
         </div>
       </Form>
     </Formik>

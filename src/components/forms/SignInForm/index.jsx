@@ -5,6 +5,7 @@ import Input from '../fields/Input';
 import Button from '../fields/Button';
 import Checkbox from '../fields/Checkbox';
 import { validationSignInSchema } from '../../../utils/validationSchems';
+import { Link } from 'react-router-dom';
 
 const SignInForm = () => {
   const initialValues = {
@@ -41,12 +42,13 @@ const SignInForm = () => {
         <div className={styles.infoWrapper}>
           <Checkbox name="rememberMe">Remember Me</Checkbox>
           <div>
-            <a
-              href="https://www.squadhelp.com/forgot_password.php"
+            <Link
+              to="/forgot_password"
               className={styles.forgorPassword}
+              target='_blank'
             >
               Forgot Password
-            </a>
+            </Link>
           </div>
         </div>
 
