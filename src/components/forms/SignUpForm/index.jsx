@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './SignUpForm.module.css';
 import { Formik, Form } from 'formik';
-import Input from '../../fields/Input';
-import Button from '../../fields/Button';
-import RadioButton from '../../fields/RadioButton';
-import Checkbox from '../../fields/Checkbox';
+import Input from '../fields/Input';
+import Button from '../fields/Button';
+import RadioButton from '../fields/RadioButton';
+import Checkbox from '../fields/Checkbox';
 import { validationSignUpSchema } from '../../../utils/validationSchems';
 
 const SignUpForm = () => {

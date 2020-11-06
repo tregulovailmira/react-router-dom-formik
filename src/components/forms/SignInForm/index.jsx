@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './SignInForm.module.css';
 import { Formik, Form } from 'formik';
-import Input from '../../fields/Input';
-import Button from '../../fields/Button';
-import Checkbox from '../../fields/Checkbox';
+import Input from '../fields/Input';
+import Button from '../fields/Button';
+import Checkbox from '../fields/Checkbox';
 import { validationSignInSchema } from '../../../utils/validationSchems';
 
 const SignInForm = () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../../components/styles.module.css';
 import SignUpForm from '../../components/forms/SignUpForm';
-import SocialButton from '../../components/fields/SocialButton';
+import SocialButton from '../../components/forms/fields/SocialButton';
 import Header from '../../components/Header';
 
 function SignUpPage(props) {

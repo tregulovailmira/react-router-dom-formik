@@ -1,12 +1,6 @@
-import React, { Component, Suspense, lazy } from 'react';
+import React, { Suspense } from 'react';
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const Home = React.lazy(() => import('./pages/Home'));
 const SignUpPage = React.lazy(() => import('./pages/SignUpPage'));
