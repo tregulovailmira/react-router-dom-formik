@@ -1,8 +1,9 @@
 import React from 'react';
 import Classnames from 'classnames';
 import styles from './SocialButton.module.css';
-import googleIcon from '../../../icons/google.png';
-import facebookIcon from '../../../icons/facebook.png';
+import Icon from '@mdi/react';
+import { mdiGoogle } from '@mdi/js';
+import { mdiFacebook } from '@mdi/js';
 
 const SocialButton = (props) => {
   const {
@@ -11,18 +12,23 @@ const SocialButton = (props) => {
     onclick = () => {},
     stylesClasses: { container },
   } = props;
+  
   const socialButtonStyles = Classnames(
     styles.socialButton,
     [styles[socialType]],
     container
   );
+
+  const googleIcon = <Icon path={mdiGoogle} size={1} className={styles.socialIcon}/>;
+  const facebookIcon = <Icon path={mdiFacebook} size={1} className={styles.socialIcon}/>;
   const socialIcons = {
     google: googleIcon,
     facebook: facebookIcon,
   };
+
   return (
     <button className={socialButtonStyles}>
-      <img className={styles.socialIcon} src={socialIcons[socialType]} alt="icon"/>
+      {socialIcons[socialType]}
       {text}
     </button>
   );
